@@ -17,3 +17,4 @@
 /Users/christinefletcher/lambda-workspace/personal-projects/simple-e-comm/Clients/obj/Debug/netcoreapp3.1/Clients.dll
 /Users/christinefletcher/lambda-workspace/personal-projects/simple-e-comm/Clients/obj/Debug/netcoreapp3.1/Clients.pdb
 /Users/christinefletcher/lambda-workspace/personal-projects/simple-e-comm/Clients/obj/Debug/netcoreapp3.1/Clients.genruntimeconfig.cache
+/Users/christinefletcher/lambda-workspace/personal-projects/simple-e-comm/Clients/bin/Debug/netcoreapp3.1/Data/data.json

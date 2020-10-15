@@ -6,5 +6,10 @@ namespace Clients.Models
         public string name { get; set; }
         public int age { get; set; }
         public string gender { get; set; }
+        public string company { get; set; }
+        public string email { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+
     }
 }

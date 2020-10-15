@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Clients.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,24 @@ namespace Clients
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Policy",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000/");
+                });
+
+                options.AddPolicy("PolicyId",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000/details")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
             services.AddControllers();
+            services.AddScoped<IClientsRepo, MockClientsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +57,8 @@ namespace Clients
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
