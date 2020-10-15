@@ -28,7 +28,9 @@ namespace Clients
                 options.AddPolicy("Policy",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000/");
+                    builder.WithOrigins("http://localhost:3000/")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
                 });
 
                 options.AddPolicy("PolicyId",
